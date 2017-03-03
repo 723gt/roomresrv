@@ -1,4 +1,12 @@
 <div id="room-legend">
+  <script>
+    $(document).on('turbolinks:before-render',function(){
+      console.log("hoge")
+      location.reload()
+    });
+  </script>
+
+
 <% if request.from_smartphone? %>
   <%= select_tag "room-select",
                  options_from_collection_for_select(@rooms, :id, :name_with_office, @room_id),
